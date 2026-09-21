@@ -1,42 +1,57 @@
-// Each statement carries its own hidden template, so copied statements work automatically.
+// Statement pop up
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modal-content");
 const closeButton = document.getElementById("close-modal");
-let activeCard;
+var activeStatement = null;
 
-function openModal(statement) {
-  activeCard = statement;
-  modalContent.innerHTML = statement.querySelector(".statement-content").innerHTML;
+function openPopup(statement){
+    activeStatement = statement;
+    modalContent.innerHTML = statement.querySelector(".statement-content").innerHTML;
 
-  // Add data-no-image to one statement's article tag to hide only its image area.
-  if (statement.hasAttribute("data-no-image")) {
-    modalContent.querySelector(".image-placeholder")?.remove();
-  }
+    // Hide image if the statement does not use one
+    const image = modalContent.querySelector(".image-placeholder");
+    if (statement.hasAttribute("data-no-image") && image){
+        image.remove();
+    }
 
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-  closeButton.focus();
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    closeButton.focus();
 }
 
-function closeModal() {
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-  activeCard?.querySelector(".explore-button").focus();
+function closePopup(){
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    if (activeStatement){
+        activeStatement.querySelector(".explore-button").focus();
+    }
 }
 
-document.querySelectorAll(".statement-card").forEach((statement) => {
-  statement.addEventListener("click", () => openModal(statement));
+// Open pop up when a statement is clicked
+const statements = document.querySelectorAll(".statement-card");
+
+statements.forEach(statement => {
+    statement.addEventListener("click", () => {
+        openPopup(statement);
+    });
 });
 
-closeButton.addEventListener("click", closeModal);
+// Close with X
+closeButton.addEventListener("click", closePopup);
 
-// Click the dark area around the pop-up to close it.
+// Close when clicking outside pop up
 modal.addEventListener("click", (event) => {
-  if (event.target === modal) closeModal();
+    if (event.target === modal){
+        closePopup();
+    }
 });
 
+// Close with escape key
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    if (event.key === "Escape" && modal.classList.contains("is-open")){
+        closePopup();
+    }
 });

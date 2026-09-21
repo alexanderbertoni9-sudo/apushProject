@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An editable statement explorer for an AP U.S. History Constitution project.">
-  <title>Article I, Section 8 | Statement Explorer</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d3557'/%3E%3Cpath d='M18 16h28v32H18z' fill='%23f7f0df'/%3E%3Cpath d='M24 25h16M24 32h16M24 39h10' stroke='%23a23e48' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Article I, Section 8</title>
+    </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
     <div class="page-width header-content">
       <div>
@@ -22,6 +18,7 @@
     </div>
   </header>
 
+  <!-- Statement cards -->
   <main class="page-width">
     <section aria-labelledby="statement-grid-heading">
       <div class="section-heading">
@@ -126,12 +123,13 @@
     </section>
   </main>
 
-  <!-- One shared pop-up; JavaScript fills it from the card that was clicked. -->
+  <!-- Statement pop up -->
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="close-button" id="close-modal" type="button" aria-label="Close pop-up">×</button>
       <div id="modal-content"></div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
