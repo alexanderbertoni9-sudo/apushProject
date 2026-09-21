@@ -253,7 +253,15 @@ body.special-effects .close-button:hover{
     object-fit: contain;
 }
 
-body.special-effects .image-placeholder.has-image{
+.statement-image{
+    display: block;
+    max-width: 100%;
+    max-height: 350px;
+    margin: .5rem auto 1rem;
+    object-fit: contain;
+}
+
+body.special-effects .image-placeholder img, body.special-effects .statement-image{
     cursor: zoom-in;
 }
 

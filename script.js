@@ -70,9 +70,8 @@ function openPopup(statement){
     }
 
     // Click an image to make it full screen
-    const image = modalContent.querySelector(".image-placeholder img");
+    const image = modalContent.querySelector(".image-placeholder img, .statement-image");
     if (image){
-        image.parentElement.classList.add("has-image");
         image.addEventListener("click", () => {
             openImage(image);
         });
