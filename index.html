@@ -14,31 +14,32 @@
         <p class="intro">Replace the bracketed placeholders with your own research, then click a statement to read its details.</p>
       </div>
       <!-- Replace the # in href with your official Constitution link. -->
-      <a class="constitution-button" href="#" target="_blank" rel="noopener">View the Official Constitution <span aria-hidden="true">↗</span></a>
+      <a class="constitution-button" href="#" target="_blank" rel="noopener">View the Official Constitution ↗</a>
     </div>
   </header>
 
-  <!-- Statement cards -->
+  <!-- Edit your statements here -->
   <main class="page-width">
-    <section aria-labelledby="statement-grid-heading">
+    <section>
       <div class="section-heading">
         <p class="eyebrow">Statement Explorer</p>
-        <h2 id="statement-grid-heading">Choose a statement</h2>
+        <h2>Choose a statement</h2>
       </div>
 
       <div class="statement-grid">
         <!-- COPY THIS ENTIRE BLOCK TO ADD ANOTHER STATEMENT -->
-        <!-- Add data-no-image to the article tag below when this statement has no image. -->
+        <!-- To remove the image, change statement-card to statement-card no-image. -->
         <article class="statement-card">
+          <!-- This is the card you see on the page -->
           <p class="statement-number">Statement 1</p>
           <h3>[STATEMENT TITLE]</h3>
           <p class="statement-summary">[WHAT THE STATEMENT MEANS]</p>
-          <button class="explore-button" type="button">Explore Statement <span aria-hidden="true">→</span></button>
+          <button class="explore-button" type="button">Explore Statement →</button>
 
-          <!-- This template becomes the pop-up content for this card. -->
-          <template class="statement-content">
+          <!-- This is the information inside the pop up -->
+          <template class="more-info">
             <p class="modal-number">Statement 1</p>
-            <h2 id="modal-title">[STATEMENT TITLE]</h2>
+            <h2>[STATEMENT TITLE]</h2>
             <section class="detail-section">
               <h3>Constitutional Text</h3>
               <p>[CONSTITUTIONAL TEXT]</p>
@@ -55,20 +56,21 @@
               <h3>How Does It Impact America Today?</h3>
               <p>[MODERN IMPACT]</p>
             </section>
-            <div class="image-placeholder" role="img" aria-label="Image placeholder">[IMAGE]</div>
+            <div class="image-placeholder">[IMAGE]</div>
             <p class="source"><strong>Source / Citation:</strong> [SOURCE]</p>
           </template>
         </article>
 
+        <!-- STATEMENT 2 - Edit this the same way as Statement 1 -->
         <article class="statement-card">
           <p class="statement-number">Statement 2</p>
           <h3>[STATEMENT TITLE]</h3>
           <p class="statement-summary">[WHAT THE STATEMENT MEANS]</p>
-          <button class="explore-button" type="button">Explore Statement <span aria-hidden="true">→</span></button>
+          <button class="explore-button" type="button">Explore Statement →</button>
 
-          <template class="statement-content">
+          <template class="more-info">
             <p class="modal-number">Statement 2</p>
-            <h2 id="modal-title">[STATEMENT TITLE]</h2>
+            <h2>[STATEMENT TITLE]</h2>
             <section class="detail-section">
               <h3>Constitutional Text</h3>
               <p>[CONSTITUTIONAL TEXT]</p>
@@ -85,20 +87,21 @@
               <h3>How Does It Impact America Today?</h3>
               <p>[MODERN IMPACT]</p>
             </section>
-            <div class="image-placeholder" role="img" aria-label="Image placeholder">[IMAGE]</div>
+            <div class="image-placeholder">[IMAGE]</div>
             <p class="source"><strong>Source / Citation:</strong> [SOURCE]</p>
           </template>
         </article>
 
+        <!-- STATEMENT 3 - Edit this the same way as Statement 1 -->
         <article class="statement-card">
           <p class="statement-number">Statement 3</p>
           <h3>[STATEMENT TITLE]</h3>
           <p class="statement-summary">[WHAT THE STATEMENT MEANS]</p>
-          <button class="explore-button" type="button">Explore Statement <span aria-hidden="true">→</span></button>
+          <button class="explore-button" type="button">Explore Statement →</button>
 
-          <template class="statement-content">
+          <template class="more-info">
             <p class="modal-number">Statement 3</p>
-            <h2 id="modal-title">[STATEMENT TITLE]</h2>
+            <h2>[STATEMENT TITLE]</h2>
             <section class="detail-section">
               <h3>Constitutional Text</h3>
               <p>[CONSTITUTIONAL TEXT]</p>
@@ -115,7 +118,7 @@
               <h3>How Does It Impact America Today?</h3>
               <p>[MODERN IMPACT]</p>
             </section>
-            <div class="image-placeholder" role="img" aria-label="Image placeholder">[IMAGE]</div>
+            <div class="image-placeholder">[IMAGE]</div>
             <p class="source"><strong>Source / Citation:</strong> [SOURCE]</p>
           </template>
         </article>
@@ -124,9 +127,9 @@
   </main>
 
   <!-- Statement pop up -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="close-button" id="close-modal" type="button" aria-label="Close pop-up">×</button>
+  <div class="modal" id="modal">
+    <div class="modal-panel">
+      <button class="close-button" id="close-modal" type="button">×</button>
       <div id="modal-content"></div>
     </div>
   </div>

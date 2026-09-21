@@ -6,23 +6,21 @@ var activeStatement = null;
 
 function openPopup(statement){
     activeStatement = statement;
-    modalContent.innerHTML = statement.querySelector(".statement-content").innerHTML;
+    modalContent.innerHTML = statement.querySelector(".more-info").innerHTML;
 
     // Hide image if the statement does not use one
     const image = modalContent.querySelector(".image-placeholder");
-    if (statement.hasAttribute("data-no-image") && image){
+    if (statement.classList.contains("no-image") && image){
         image.remove();
     }
 
     modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
     closeButton.focus();
 }
 
 function closePopup(){
     modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
 
     if (activeStatement){
